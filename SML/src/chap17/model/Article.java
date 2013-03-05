@@ -26,7 +26,7 @@ public class Article {
 		return groupId;
 	}
 	
-	public void setGruopId(int groupId) {
+	public void setGroupId(int groupId) {
 		this.groupId = groupId;
 	}
 	
