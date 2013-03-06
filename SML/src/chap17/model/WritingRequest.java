@@ -40,7 +40,7 @@ public class WritingRequest {
 	
 	public Article toArticle() {
 		Article article = new Article();
-		article.setWriteName(writerName);
+		article.setWriterName(writerName);
 		article.setPassword(password);
 		article.setTitle(title);
 		article.setContent(content);
