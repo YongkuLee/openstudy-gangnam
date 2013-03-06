@@ -67,7 +67,7 @@ public class ArticleDao {
 		article.setSequenceNumber(rs.getString("sequence_no"));
 		article.setPostingDate(rs.getTimestamp("posting_date"));
 		article.setReadCount(rs.getInt("read_count"));
-		article.setWriteName(rs.getString("writer_name"));
+		article.setWriterName(rs.getString("writer_name"));
 		article.setPassword(rs.getString("password"));
 		article.setTitle(rs.getString("title"));
 		if(readContent) {
@@ -83,11 +83,11 @@ public class ArticleDao {
 		
 		try {
 			pstmt = conn.prepareStatement("insert into article (group_id, sequence_no, posting_date, read_count," +
-					"writer_naeme, password, title, content) value (?, ?, ?, 0, ?, ?, ?, ?)");
+					"writer_name, password, title, content) value (?, ?, ?, 0, ?, ?, ?, ?)");
 			pstmt.setInt(1, article.getGroupId());
 			pstmt.setString(2, article.getSequenceNumber());
 			pstmt.setTimestamp(3, new Timestamp(article.getPostingDate().getTime()));
-			pstmt.setString(4, article.getWriteName());
+			pstmt.setString(4, article.getWriterName());
 			pstmt.setString(5, article.getPassword());
 			pstmt.setString(6, article.getTitle());
 			pstmt.setString(7, article.getContent());
@@ -107,5 +107,54 @@ public class ArticleDao {
 			JdbcUtil.close(stmt);
 			JdbcUtil.close(pstmt);
 		}
+	}
+	
+	public Article selectById(Connection conn, int articleId) throws SQLException {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement("select * from article where article_id = ?");
+			pstmt.setInt(1, articleId);
+			rs = pstmt.executeQuery();
+			if(!rs.next()) {
+				return null;
+			}
+			Article article = makeArticleFromResultSet(rs, true);
+			return article;
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
+	public void increaseReadCount(Connection conn, int articleId) throws SQLException {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement("update article set read_count = read_count + 1 where article_id = ?");
+			pstmt.setInt(1, articleId);
+			pstmt.executeUpdate();
+		} finally {
+			JdbcUtil.close(pstmt);
+		}
+	}
+	
+	public String SelectLastSequenceNumber(Connection conn, String searchMaxSeqNum, String searchMinSeqNum) 
+	throws SQLException {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement("select min(sequence_no) from article " +
+					"where sequence_no < ? and sequence_no >= ?");
+			pstmt.setString(1, searchMaxSeqNum);
+			pstmt.setString(2, searchMinSeqNum);
+			rs = pstmt.executeQuery();
+			if(!rs.next()) {
+				return null;
+			}
+			return rs.getString(1);
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+		
 	}
 }
