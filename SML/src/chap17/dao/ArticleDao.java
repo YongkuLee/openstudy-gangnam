@@ -157,4 +157,18 @@ public class ArticleDao {
 		}
 		
 	}
-}
+	
+	public int update(Connection conn, Article article) throws SQLException {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement("update article set title = ?, content = ? where article_id = ?");
+			pstmt.setString(1, article.getTitle());
+			pstmt.setString(2, article.getContent());
+			pstmt.setInt(3, article.getId());
+			return pstmt.executeUpdate();
+		} finally {
+			JdbcUtil.close(pstmt);
+		}
+
+	}
+}	

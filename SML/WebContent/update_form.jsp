@@ -5,14 +5,24 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	int articleId = Integer.parseInt(request.getParameter("articleId"));
 	String viewPage = null;
 	try {
-		Article article = ReadArticleService.getInstance().readArticle(articleId);
+		int articleId = Integer.parseInt(request.getParameter("articleId"));
+		Article article = ReadArticleService.getInstance().getArticle(articleId);
+		viewPage = "/update_form_view.jsp";
 		request.setAttribute("article", article);
-		viewPage = "/read_view.jsp";
 	} catch(ArticleNotFoundException ex) {
-		viewPage = "/articel_not_found.jsp";
+		viewPage = "/article_not_found.jsp";
 	}
 %>
-<jsp:forward page="<%=viewPage %>"></jsp:forward>
+<jsp:forward page="<%=viewPage%>"></jsp:forward>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
