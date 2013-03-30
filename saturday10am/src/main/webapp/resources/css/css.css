@@ -1,0 +1,299 @@
+div,ul,li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+body {
+	background:
+		url("https://d6uecr261svs9.cloudfront.net/assets/bg-edbc61ee2fb696d4252f720f9fe94cce.jpg");
+}
+
+a:active {
+	font-size: 12pt;
+	text-decoration: none;
+	color: #fff
+}
+
+a:link {
+	font-size: 12pt;
+	text-decoration: none;
+	color: #fff
+}
+
+a:visited {
+	font-size: 12pt;
+	text-decoration: none;
+	color: #fff
+}
+
+a:hover {
+	font-size: 12pt;
+	text-decoration: none;
+	color: #fff;
+	background-color: #872312;
+	border-radius: 4px;
+}
+
+#header-container {
+	position: relative;
+	z-index: 100;
+	background-color: #d64026;
+	box-shadow: inset 0 -2px 0 #872312;
+}
+
+#header {
+	position: relative;
+	width: 970px;
+	margin: 0 auto;
+}
+
+#logo {
+	height: 92px;
+	width: 280px;
+	display: inline-block;
+}
+
+#logo img {
+	width: 100%;
+	height: 100%;
+}
+
+#writebutton {
+	display: inline-block;
+	color: #fff;
+}
+
+#nav-group {
+	float: right;
+	display: inline-block;
+	width: 420px;
+	margin-top: 30px;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.nav {
+	float: left;
+	top: 0px;
+}
+
+.menu-title {
+	display: block;
+	padding: 4px 10px 10px 10px;
+}
+
+#searchbox {
+	margin-left: 50px;
+	display: inline-block;
+	width: 186px;
+	height: 20px;
+	padding: 6px 14px 1px 27px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #bbb;
+	border: 1px solid #872312;
+	background: white url(http://dribbble.com/images/icon-search.png)
+		no-repeat 7px 50%;
+	border-radius: 4px;
+	vertical-align: middle;
+}
+
+#container {
+	width: 970px;
+	margin-top: 35px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.feeds {
+	display: table;
+}
+
+#content {
+	width: 970px;
+	margin: 0 auto;
+}
+
+.span8 {
+	width: 298px;
+	margin: 0 0 10px 25px;
+}
+
+.col {
+	display: block;
+	float: left;
+}
+
+.node {
+	padding: 5px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.numberdate {
+	height: 12px;
+	font-size: 9px;
+	color: #ddd;
+	border-bottom: 1px solid #ddd;
+	font-size: 9px;
+}
+
+.number {
+	float: left;
+}
+
+.date {
+	float: right;
+}
+
+.picname {
+	margin-top: 4px;
+	height: 70px;
+	font-size: 11px;
+	color: #000;
+	height: 70px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.pic {
+	float: left;
+	height: 65px;
+	width: 65px;
+	border: 1px solid #ddd;
+	display: inline-block;
+}
+
+.pic img {
+	width: 100%;
+	height: 100%;
+}
+
+.name {
+	display: inline-block;
+	margin-top: 14px;
+	margin-left: 10px;
+	width: 180px;
+}
+
+.title {
+	color: #d64026;
+	font-size: 13px;
+}
+
+.contentbody {
+	color: #000;
+	font-size: 12px;
+	padding: 10px;
+}
+
+.comment {
+	font-size: 11px;
+	padding: 10px;
+}
+
+.comments {
+	border-top: 2px solid #fff;
+	color: #000;
+	padding: 10px;
+	background-color: #f5f5dc;
+}
+
+.writecomment {
+	margin-top: 10px;
+}
+
+.commentbox {
+	width: 213px;
+}
+
+#footer {
+	background: none rgba(0, 0, 0, 0.05);
+	width: 100%;
+	color: #acacac;
+	height: 30px;
+	padding: 30px;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	font-size: 10px;
+}
+
+.color1 {
+	background-color: #e0ffff;
+}
+
+.color2 {
+	background-color: #fff0f5;
+}
+
+.color3 {
+	background-color: #eee8aa;
+}
+
+.color4 {
+	background-color: #ffe4b5;
+}
+
+.color5 {
+	background-color: #fff;
+}
+
+.postbox {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	width: 700px;
+	margin: 0 auto;
+height: 412px;
+}
+
+
+.posttitle {
+	font-size: 20px;
+	color: #d64026;
+	padding: 10px;
+}
+
+.postcontent {
+	line-height: 1.7em;
+	background-color: #f8f8ff;
+	padding: 20px;
+}
+
+.titlebox {
+	border-top: 2px solid #fff;
+	color: #000;
+	padding: 10px;
+	background-color: #f5f5dc;
+	width:670px;
+	border: 0px;
+}
+
+.donebutton {
+	float: right;
+	margin-right:10px;
+	border-top: 5px solid #fff;
+	color: #fff;
+	font-size:14px;
+	padding: 10px;
+	background-color: #d64026;
+	width:100px;
+	border: 0px;
+}
+
+.bodybox {
+	border-top: 7px solid #fff;
+	color: #000;
+	padding: 10px;
+	background-color: #f5f5dc;
+	width:670px;
+	height:300px;
+	border: 0px;
+	
+}
